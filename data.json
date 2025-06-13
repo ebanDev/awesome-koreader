@@ -168,7 +168,7 @@
       "plugins": [
         {
           "name": "calculator.koplugin",
-          "uri": "https://github.com/koreader/contrib/tree/main/calculator.koplugin",
+          "uri": "https://github.com/zwim/calculator.koplugin",
           "description": "A sophisticated calculator for KOReader."
         },
         {
