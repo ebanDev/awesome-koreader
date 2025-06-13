@@ -41,8 +41,6 @@ jobs:
           > Most of the patches and plugins listed here are unofficial and not maintained by the KOReader team, nor by me.  
           > Use at your own risk, and always check the code before installing.
 
-          --
-
           """
 
           # Add each category
