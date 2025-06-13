@@ -1,0 +1,69 @@
+name: Generate README from data.json
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'data.json'
+
+jobs:
+  generate-readme:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Generate README.md from data.json
+        run: |
+          import json
+
+          # Read data.json
+          with open("data.json", "r") as f:
+              data = json.load(f)
+
+          # Generate README content
+          readme_content = """# Awesome KOReader Patches and Plugins
+
+          A curated list of useful patches and plugins for [KOReader](https://koreader.rocks/) — organized by category.  
+          To use: drop any `.lua` file into your `koreader/patches/` folder and restart KOReader.  
+          Feel free to submit a PR if you have a patch/plugin to add!
+
+          > [!NOTE]
+          > Most of the patches and plugins listed here are unofficial and not maintained by the KOReader team, nor by me.  
+          > Use at your own risk, and always check the code before installing.
+
+          --
+
+          """
+
+          # Add each category
+          for category in data["categories"]:
+              readme_content += f"## {category['name']}\n\n"
+              
+              for patch in category["patches"]:
+                  readme_content += f"- [{patch['name']}]({patch['uri']}) – {patch['description']}\n"
+              
+              readme_content += "\n"
+
+          # Write README.md
+          with open("README.md", "w") as f:
+              f.write(readme_content)
+
+        shell: python
+
+      - name: Commit and push README.md
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "Update README.md from data.json" || echo "No changes to commit"
+          git push
