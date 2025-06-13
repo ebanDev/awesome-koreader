@@ -8,8 +8,6 @@ Feel free to submit a PR if you have a patch/plugin to add!
 > Most of the patches and plugins listed here are unofficial and not maintained by the KOReader team, nor by me.  
 > Use at your own risk, and always check the code before installing.
 
---
-
 ## 📊 Status & Progress Bar
 
 ### Patches
