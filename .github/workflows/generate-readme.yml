@@ -49,10 +49,19 @@ jobs:
           for category in data["categories"]:
               readme_content += f"## {category['name']}\n\n"
               
-              for patch in category["patches"]:
-                  readme_content += f"- [{patch['name']}]({patch['uri']}) – {patch['description']}\n"
+              # Add patches if they exist
+              if category["patches"]:
+                  readme_content += "### Patches\n\n"
+                  for patch in category["patches"]:
+                      readme_content += f"- [{patch['name']}]({patch['uri']}) – {patch['description']}\n"
+                  readme_content += "\n"
               
-              readme_content += "\n"
+              # Add plugins if they exist
+              if category["plugins"]:
+                  readme_content += "### Plugins\n\n"
+                  for plugin in category["plugins"]:
+                      readme_content += f"- [{plugin['name']}]({plugin['uri']}) – {plugin['description']}\n"
+                  readme_content += "\n"
 
           # Write README.md
           with open("README.md", "w") as f:
