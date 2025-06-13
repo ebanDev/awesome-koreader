@@ -70,7 +70,7 @@ Feel free to submit a PR if you have a patch/plugin to add!
 
 ### Plugins
 
-- [calculator.koplugin](https://github.com/koreader/contrib/tree/main/calculator.koplugin) – A sophisticated calculator for KOReader.
+- [calculator.koplugin](https://github.com/zwim/calculator.koplugin) – A sophisticated calculator for KOReader.
 - [clock.koplugin](https://github.com/koreader/contrib/tree/main/clock.koplugin) – Analog clock for KOReader.
 - [digitalclock.koplugin](https://github.com/DucNg/digitalclock.koplugin/tree/04a9ab7423e90ae2dbb890c4a7497fbda9caa189) – A digital clock for KOReader that displays time, date and an image.
 - [weather.koplugin](https://github.com/roygbyte/koweather/tree/5192c957f872700d245c72e4777e38fc7e3110e6) – Provides weather forecasts and conditions within KOReader.
