@@ -112,7 +112,13 @@
           "description": "rename and recolour highlight options."
         }
       ],
-      "plugins": []
+      "plugins": [
+        {
+          "name": "screvi.koplugin",
+          "uri": "https://github.com/screvi/screvi-koreader-plugin",
+          "description": "sync highlights and notes to Screvi (a paid highlights manager), with QR-code pairing and optional auto-sync when you close a book."
+        }
+      ]
     },
     {
       "name": "🖌️ UI & Fonts",
